@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">CalculadoraActividad1_Robson_1EVA</string>
+    <string name="calculatorScreen">0</string>
     <string name="equal">=</string>
     <string name="coma">,</string>
     <string name="plus">+</string>
