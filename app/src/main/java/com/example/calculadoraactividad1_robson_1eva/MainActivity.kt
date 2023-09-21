@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
-    private var operationDone : Boolean = false
     private var screenText:String = " ";
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,90 +22,107 @@ class MainActivity : AppCompatActivity() {
         val button7: Button = findViewById(R.id.button7);
         val button8: Button = findViewById(R.id.button8);
         val button9: Button = findViewById(R.id.button9);
+        val buttonComa: Button = findViewById(R.id.buttonComa)
         val buttonPlus: Button = findViewById(R.id.buttonPlus);
         val buttonMinus: Button = findViewById(R.id.buttonMinus);
         val buttonMultiplication: Button = findViewById(R.id.buttonMultiplication);
         val buttonDivision: Button = findViewById(R.id.buttonDivision);
         val buttonEquals: Button = findViewById(R.id.buttonEquals);
+        val buttonShare: Button = findViewById(R.id.buttonShare);
+        val buttonAC: Button = findViewById(R.id.buttonAC);
 
-        if (operationDone) {
-            screen.text = " "
-            operationDone = false
-        } else {
-            button0.setOnClickListener {
-                screen.text = screen.text.toString() + button0.text
+        button0.setOnClickListener {
+            screen.text = screen.text.toString() + button0.text
+            screenText = screen.text.toString()
+            println(screenText)
+        }
+        button1.setOnClickListener {
+            screen.text = screen.text.toString() + button1.text
+            screenText = screen.text.toString()
+            println(screenText)
+        }
+        button2.setOnClickListener {
+            screen.text = screen.text.toString() + button2.text
+            screenText = screen.text.toString()
+            println(screenText)
+        }
+        button3.setOnClickListener {
+            screen.text = screen.text.toString() + button3.text
+            screenText = screen.text.toString()
+        }
+        button4.setOnClickListener {
+            screen.text = screen.text.toString() + button4.text
+            screenText = screen.text.toString()
+        }
+        button5.setOnClickListener {
+            screen.text = screen.text.toString() + button5.text
+            screenText = screen.text.toString()
+        }
+        button6.setOnClickListener {
+            screen.text = screen.text.toString() + button6.text
+            screenText = screen.text.toString()
+        }
+        button7.setOnClickListener {
+            screen.text = screen.text.toString() + button7.text
+            screenText = screen.text.toString()
+        }
+        button8.setOnClickListener {
+            screen.text = screen.text.toString() + button8.text
+            screenText = screen.text.toString()
+        }
+        button9.setOnClickListener {
+            screen.text = screen.text.toString() + button9.text
+            screenText = screen.text.toString()
+        }
+        buttonComa.setOnClickListener {
+            if (obtainPreviousInput(screen.text.toString())) {
+                screen.text = screen.text.toString() + buttonComa.text
                 screenText = screen.text.toString()
-                println(screenText)
             }
-            button1.setOnClickListener {
-                screen.text = screen.text.toString() + button1.text
-                screenText = screen.text.toString()
-                println(screenText)
-            }
-            button2.setOnClickListener {
-                screen.text = screen.text.toString() + button2.text
-                screenText = screen.text.toString()
-                println(screenText)
-            }
-            button3.setOnClickListener {
-                screen.text = screen.text.toString() + button3.text
+        }
+        buttonPlus.setOnClickListener {
+            if (obtainPreviousInput(screen.text.toString())) {
+                screen.text = screen.text.toString() + buttonPlus.text
                 screenText = screen.text.toString()
             }
-            button4.setOnClickListener {
-                screen.text = screen.text.toString() + button4.text
+        }
+        buttonMinus.setOnClickListener {
+            if (obtainPreviousInput(screen.text.toString())) {
+                screen.text = screen.text.toString() + buttonMinus.text
                 screenText = screen.text.toString()
             }
-            button5.setOnClickListener {
-                screen.text = screen.text.toString() + button5.text
+        }
+        buttonMultiplication.setOnClickListener {
+            if (obtainPreviousInput(screen.text.toString())) {
+                screen.text = screen.text.toString() + buttonMultiplication.text
                 screenText = screen.text.toString()
             }
-            button6.setOnClickListener {
-                screen.text = screen.text.toString() + button6.text
+        }
+        buttonDivision.setOnClickListener {
+            if (obtainPreviousInput(screen.text.toString())) {
+                screen.text = screen.text.toString() + buttonDivision.text
                 screenText = screen.text.toString()
             }
-            button7.setOnClickListener {
-                screen.text = screen.text.toString() + button7.text
-                screenText = screen.text.toString()
+        }
+        buttonEquals.setOnClickListener {
+            try {
+                screen.text = " "
+            }catch (e: Exception){
+                screen.text = " "
             }
-            button8.setOnClickListener {
-                screen.text = screen.text.toString() + button8.text
-                screenText = screen.text.toString()
+        }
+        buttonShare.setOnClickListener {
+            try {
+                screen.text = " "
+            }catch (e: Exception){
+                screen.text = " "
             }
-            button9.setOnClickListener {
-                screen.text = screen.text.toString() + button9.text
-                screenText = screen.text.toString()
-            }
-            buttonPlus.setOnClickListener {
-                if (obtainPreviousInput(screen.text.toString())) {
-                    screen.text = screen.text.toString() + buttonPlus.text
-                    screenText = screen.text.toString()
-                }
-            }
-            buttonMinus.setOnClickListener {
-                if (obtainPreviousInput(screen.text.toString())) {
-                    screen.text = screen.text.toString() + buttonMinus.text
-                    screenText = screen.text.toString()
-                }
-            }
-            buttonMultiplication.setOnClickListener {
-                if (obtainPreviousInput(screen.text.toString())) {
-                    screen.text = screen.text.toString() + buttonMultiplication.text
-                    screenText = screen.text.toString()
-                }
-            }
-            buttonDivision.setOnClickListener {
-                if (obtainPreviousInput(screen.text.toString())) {
-                    screen.text = screen.text.toString() + buttonDivision.text
-                    screenText = screen.text.toString()
-                }
-            }
-            buttonEquals.setOnClickListener {
-                try {
-                    screen.text = " "
-                    operationDone = true
-                }catch (e: Exception){
-                    screen.text = " "
-                }
+        }
+        buttonAC.setOnClickListener {
+            try {
+                screen.text = " "
+            }catch (e: Exception){
+                screen.text = " "
             }
         }
     }
