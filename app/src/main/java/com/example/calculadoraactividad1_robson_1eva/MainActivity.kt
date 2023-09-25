@@ -1,35 +1,37 @@
 package com.example.calculadoraactividad1_robson_1eva
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 class MainActivity : AppCompatActivity() {
 
-    private var screenText:String = " ";
+    private var screenText:String = " "
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val screen: TextView = findViewById(R.id.calculatorScreen);
+        val screen: TextView = findViewById(R.id.calculatorScreen)
 
-        val button0: Button = findViewById(R.id.button0);
-        val button1: Button = findViewById(R.id.button1);
-        val button2: Button = findViewById(R.id.button2);
-        val button3: Button = findViewById(R.id.button3);
-        val button4: Button = findViewById(R.id.button4);
-        val button5: Button = findViewById(R.id.button5);
-        val button6: Button = findViewById(R.id.button6);
-        val button7: Button = findViewById(R.id.button7);
-        val button8: Button = findViewById(R.id.button8);
-        val button9: Button = findViewById(R.id.button9);
+        val button0: Button = findViewById(R.id.button0)
+        val button1: Button = findViewById(R.id.button1)
+        val button2: Button = findViewById(R.id.button2)
+        val button3: Button = findViewById(R.id.button3)
+        val button4: Button = findViewById(R.id.button4)
+        val button5: Button = findViewById(R.id.button5)
+        val button6: Button = findViewById(R.id.button6)
+        val button7: Button = findViewById(R.id.button7)
+        val button8: Button = findViewById(R.id.button8)
+        val button9: Button = findViewById(R.id.button9)
         val buttonComa: Button = findViewById(R.id.buttonComa)
-        val buttonPlus: Button = findViewById(R.id.buttonPlus);
-        val buttonMinus: Button = findViewById(R.id.buttonMinus);
-        val buttonMultiplication: Button = findViewById(R.id.buttonMultiplication);
-        val buttonDivision: Button = findViewById(R.id.buttonDivision);
-        val buttonEquals: Button = findViewById(R.id.buttonEquals);
-        val buttonShare: Button = findViewById(R.id.buttonShare);
-        val buttonAC: Button = findViewById(R.id.buttonAC);
+        val buttonPlus: Button = findViewById(R.id.buttonPlus)
+        val buttonMinus: Button = findViewById(R.id.buttonMinus)
+        val buttonMultiplication: Button = findViewById(R.id.buttonMultiplication)
+        val buttonDivision: Button = findViewById(R.id.buttonDivision)
+        val buttonEquals: Button = findViewById(R.id.buttonEquals)
+        val buttonShare: Button = findViewById(R.id.buttonShare)
+        val buttonAC: Button = findViewById(R.id.buttonAC)
 
         button0.setOnClickListener {
             screen.text = screen.text.toString() + button0.text
@@ -135,7 +137,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume(){
         super.onResume()
-        val screenView:TextView = findViewById<TextView>(R.id.calculatorScreen)
+        val screenView:TextView = findViewById(R.id.calculatorScreen)
         screenView.text = screenText
     }
     override fun onSaveInstanceState(outState: Bundle) {

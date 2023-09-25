@@ -108,7 +108,8 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="DuplicateSpeakableTextCheck" />
 
     <Button
         android:id="@+id/button1"
@@ -218,7 +219,7 @@
         android:layout_width="392dp"
         android:layout_height="126dp"
         android:background="#FFFFFF"
-        android:gravity="right|center_vertical"
+        android:gravity="center_vertical|end"
         android:text="@string/calculatorScreen"
         android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/buttonShare"
